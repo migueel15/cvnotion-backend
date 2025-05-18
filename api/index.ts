@@ -1,6 +1,7 @@
-import express from "express";
+require("dotenv").config();
+const express = require("express");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.get("/", (req, res) => {
@@ -11,3 +12,5 @@ app.get("/auth", (req, res) => {
 });
 
 app.listen(PORT);
+
+module.exports = app;
