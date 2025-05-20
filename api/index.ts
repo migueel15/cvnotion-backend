@@ -8,7 +8,8 @@ app.get("/", (req, res) => {
   res.json({ status: 200, message: "Hello World" });
 });
 app.get("/auth", (req, res) => {
-  res.json({ status: 200, code: "este es tu codigo" });
+  const { code } = req.query;
+  res.redirect(`cvnotion://auth/callback?code=${code}`);
 });
 
 app.listen(PORT);
